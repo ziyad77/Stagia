@@ -1,24 +1,21 @@
 <?php
 
-namespace My\UserBundle\Form\Type;
+namespace Stagia\UtilisateurBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilder;
 use FOS\UserBundle\Form\Type\ProfileFormType as BaseType;
+use Symfony\Component\Form\FormBuilderInterface;
 
 class ProfileFormType extends BaseType
 {
-
-    public function getName()
-    {
-        return 'stagia_user_profile';
-    }
-
-    protected function buildUserForm(FormBuilder $builder, array $options)
+    protected function buildUserForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('email', 'email')
-            ->add('firstName')
-            ->add('lastName')
         ;
+    }
+    public function getName()
+    {
+        return 'stagia_user_profile';
     }
 }
